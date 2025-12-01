@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TR AST PTI</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Poppins, sans-serif;
+        background: linear-gradient(135deg, #1db954, #0f4023, #000);
+    }
+
+
+    @keyframes fadeSlide {
+        0% { opacity: 0; transform: translateY(40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+        width: 420px;
+        background: rgba(0,0,0,0.45);
+        backdrop-filter: blur(12px);
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.6);
+        animation: fadeSlide 0.8s ease forwards;
+        position: relative;
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+        margin-bottom: 25px;
+    }
+
+    label {
+        color: #e4e4e4;
+        font-size: 15px;
+    }
+
+    .input-box {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 18px;
+    }
+
+    input {
+        padding: 12px;
+        margin-top: 6px;
+        border: none;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.15);
+        color: white;
+        transition: 0.25s;
+    }
+
+    input:focus {
+        background: rgba(255,255,255,0.25);
+        outline: none;
+        transform: scale(1.02);
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #1db954;
+        border: none;
+        border-radius: 12px;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 18px #1db954;
+    }
+
+    /* Checkbox untuk switch form */
+    #toggle {
+        display: none;
+    }
+
+    .signup-form { display: none; }
+
+    #toggle:checked ~ .card .login-form { display: none; }
+    #toggle:checked ~ .card .signup-form { display: block; }
+
+    .switch-btn {
+        margin-top: 18px;
+        text-align: center;
+        cursor: pointer;
+        color: #1db954;
+        text-decoration: underline;
+        font-weight: bold;
+        display: block;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Checkbox Switch -->
+<input type="checkbox" id="toggle">
+
+<div class="card">
+
+    <!-- LOGIN -->
+    <div class="login-form">
+        <h1>TEHER AST PETEHIH</h1>
+        <form action="index.html" method="get">
+            <div class="input-box">
+                <label>Username</label>
+                <input type="text" placeholder="Masukkan username" required>
+            </div>
+            <div class="input-box">
+                <label>Password</label>
+                <input type="password" placeholder="Masukkan password" required>
+            </div>
+
+            <button type="submit">Login</button>
+
+            <!-- Switch ke Sign Up -->
+            <label for="toggle" class="switch-btn">Belum punya akun? Sign Up</label>
+        </form>
+    </div>
+
+    <!-- SIGN UP -->
+    <div class="signup-form">
+        <h1>TEHER AST PETEHIH</h1>
+        <form action="index.html" method="post">
+            <div class="input-box">
+                <label>Username</label>
+                <input type="text" placeholder="Buat username" required>
+            </div>
+            <div class="input-box">
+                <label>Email</label>
+                <input type="email" placeholder="Masukkan email" required>
+            </div>
+            <div class="input-box">
+                <label>Password</label>
+                <input type="password" placeholder="Buat password" required>
+            </div>
+
+            <!-- TOMBOL SIGN UP → langsung ke home -->
+            <button type="submit">Sign Up</button>
+
+            <!-- Switch ke Login -->
+            <label for="toggle" class="switch-btn">Sudah punya akun? Login</label>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
